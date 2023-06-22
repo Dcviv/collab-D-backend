@@ -5,7 +5,7 @@ const cors =require("cors");
 const documentRouter = require("./routes/document");
 const http= require("http");
 const Document= require("./models/document");
-const DB= process.env.DB | DB;
+const DB= process.env.DB;
 const BASE_URL= process.env.BASE_URL | "http://localhost:3001";
 
 
@@ -19,7 +19,7 @@ app.use(express.json()); //it is a middleware
 app.use(authRouter);//middleware
 app.use(documentRouter);
 
-//const DB= "mongodb+srv://vivek2064:test123@cluster0.zo8kbmi.mongodb.net/?retryWrites=true&w=majority";
+
 
 
 mongoose.connect(DB).then(()=>{
